@@ -2,6 +2,7 @@
 Pdf file generation through python library- fpdf2 
 
 <h2>Features</h2>
+<ol>
 Python 3.7+ support
 Unicode (UTF-8) TrueType font subset embedding
 Internal / external links
@@ -20,3 +21,4 @@ Presentation mode with control over page display duration & transitions
 Unit tests with qpdf-based PDF diffing and a high code coverage
 Optional basic Markdown-like styling: **bold**, __italics__
 Can render mathematical equations & charts
+</ol>
