@@ -4,12 +4,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-title = 'Maintenance Report ---- PULSE'
+title = 'Maintenance Report'
 
 class PDF(FPDF):       
     def header(self):
         # Logo
-        self.image('pulse.png', 180, 8, 25)
+        #self.image('pulse.png', 180, 8, 25)
         self.set_font('helvetica', 'B', 18)
        
         # Calculate width of title and position
@@ -123,55 +123,55 @@ col_width = epw/4
 
 th = pdf.font_size
  
-# pdf.set_font('Times','B',14.0) 
-# pdf.cell(epw, 10 , 'INCIDENT REPORT', align='C')
-# pdf.set_font('Times','',10.0) 
-# pdf.ln(10)
+pdf.set_font('Times','B',14.0) 
+pdf.cell(epw, 10 , 'INCIDENT REPORT', align='C')
+pdf.set_font('Times','',10.0) 
+pdf.ln(10)
  
-# df = pd.DataFrame({"A":np.random.randint(0,100,size=1000),"B":np.random.randint(0,100,size=1000),"C":np.random.randint(0,100,size=1000),"D":np.random.randint(0,100,size=1000)})
+df = pd.DataFrame({"A":np.random.randint(0,100,size=1000),"B":np.random.randint(0,100,size=1000),"C":np.random.randint(0,100,size=1000),"D":np.random.randint(0,100,size=1000)})
 
-# vals = df.values
-# data=vals.tolist()
+vals = df.values
+data=vals.tolist()
 
-#df = pd.DataFrame(np.random.randint(0,1000,size=(100, 4)), columns=list('ABCD'))
-#df.columns = ['A', 'B', 'C', 'D']
+df = pd.DataFrame(np.random.randint(0,1000,size=(100, 4)), columns=list('ABCD'))
+df.columns = ['A', 'B', 'C', 'D']
 
-#output_df_to_pdf(pdf, df)
+output_df_to_pdf(pdf, df)
 
 
-# # Here we add more padding by passing 2*th as height
-# for row in data:
-#     for datum in row:
-#         # Enter data in colums
-#         pdf.cell(col_width, 2*th, str(datum), border=1)
+# Here we add more padding by passing 2*th as height
+for row in data:
+    for datum in row:
+        # Enter data in colums
+        pdf.cell(col_width, 2*th, str(datum), border=1)
  
-#     pdf.ln(2*th)
+    pdf.ln(2*th)
 
 
 
-# pdf.ln(10)
-# plt.rcParams["figure.figsize"] = [7.50, 3.50]
-# plt.rcParams["figure.autolayout"] = True
+pdf.ln(10)
+plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.autolayout"] = True
 
-# pdf.ln(20)
-# pdf.set_font('Times','B',14.0) 
-# pdf.cell(epw, 5 , 'My plots', align='C')
-# pdf.cell(50, 10, "", 0, 2, 'C')
-# pdf.image('1.area.png', x = 40, y = 80,  w=150, h=100)
+pdf.ln(20)
+pdf.set_font('Times','B',14.0) 
+pdf.cell(epw, 5 , 'My plots', align='C')
+pdf.cell(50, 10, "", 0, 2, 'C')
+pdf.image('1.area.png', x = 40, y = 80,  w=150, h=100)
 
 
 
-# pdf.ln(10)
-# pdf.set_font('Times','B',14.0) 
-# pdf.cell(epw, 5 , 'My plots', align='C')
-# pdf.cell(30, 5, " ", 0, 2, 'C')
-# pdf.ln(10)
-# df.plot.area()
-# plt.savefig('1.area.png')
-# # pdf.image('chart.png', x = 40, y = 80, w=150, h=100)
-# pdf.image('1.area.png',  w=200, h=100)
+pdf.ln(10)
+pdf.set_font('Times','B',14.0) 
+pdf.cell(epw, 5 , 'My plots', align='C')
+pdf.cell(30, 5, " ", 0, 2, 'C')
+pdf.ln(10)
+df.plot.area()
+plt.savefig('1.area.png')
+# pdf.image('chart.png', x = 40, y = 80, w=150, h=100)
+pdf.image('1.area.png',  w=200, h=100)
 
-"""
+
 
 pdf.ln(10)
 pdf.set_font('Times','B',14.0) 
@@ -191,8 +191,8 @@ df.sum().plot.bar()
 plt.savefig('3.sum.png')
 pdf.image('3.sum.png',  w=200, h=100)
 
-"""
 
 
-#pdf.output('incidentReport.pdf')
+
+pdf.output('Report.pdf')
 
